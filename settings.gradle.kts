@@ -1,4 +1,4 @@
-rootProject.name = "mumakil"
+rootProject.name = "gradle-conventions"
 
 dependencyResolutionManagement {
     repositories {
