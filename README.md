@@ -7,6 +7,7 @@ This repo contains a collection of Gradle convention plugins, which provide some
 | Plugin                   | Purpose                                                                          |
 |--------------------------|----------------------------------------------------------------------------------|
 | Java Spring Core         | Contains the basic setup for Java projects inlc. JUnit & Spring Boot 3           |
+| Kotlin Core              | Contains the basic setup for Kotlin projects
 | Jacoco                   | Contains the configuration for JaCoCo                                            |
 | Open Rewrite             | Contains the basic setup to run OpenRewrite migrations                           |
 | Spring Service           | Contains the basic setup for Spring Boot services                                |
