@@ -1,8 +1,6 @@
 import sh.edelbyte.gradle.*
 import org.gradle.kotlin.dsl.dependencies
 
-description = "Convention Plugin for Java core configuration"
-
 plugins {
     `java-library`
     id("io.freefair.lombok")

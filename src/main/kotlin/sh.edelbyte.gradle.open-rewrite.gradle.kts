@@ -1,4 +1,3 @@
-description = "Convention Plugin for running OpenRewrite"
 
 plugins {
     id("org.openrewrite.rewrite")

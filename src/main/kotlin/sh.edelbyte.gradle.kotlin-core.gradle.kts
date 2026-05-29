@@ -2,7 +2,7 @@ import sh.edelbyte.gradle.*
 import org.gradle.kotlin.dsl.dependencies
 
 plugins {
-    id("java-core")
+    id("sh.edelbyte.gradle.java-core")
     id("org.jetbrains.kotlin.jvm")
 }
 

@@ -1,7 +1,5 @@
 import org.gradle.kotlin.dsl.`java-library`
 
-description = "Convention Plugin for collecting code coverage with JaCoCo"
-
 plugins {
     `java-library`
     jacoco
