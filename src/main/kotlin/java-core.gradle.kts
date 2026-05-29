@@ -1,4 +1,4 @@
-import io.edelbyte.gradle.SPRING_BOOT_VERSION
+import io.edelbyte.gradle.*
 import org.gradle.kotlin.dsl.dependencies
 
 description = "Convention Plugin for Java core configuration"
@@ -37,9 +37,9 @@ tasks.withType<AbstractArchiveTask>().configureEach {
 }
 
 dependencies {
-    implementation(platform("org.springframework.boot:spring-boot-dependencies:$SPRING_BOOT_VERSION"))
-    implementation("org.apache.commons:commons-lang3")
-    compileOnly("org.slf4j:slf4j-api")
-
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("org.apache.commons:commons-lang3:$COMMONS_LANG3_VERSION")
+    compileOnly("org.slf4j:slf4j-api:$SLF4J_VERSION")
+    
+    testImplementation("org.junit.jupiter:junit-jupiter:$JUNIT_VERSION")
+    testImplementation("org.assertj:assertj-core:$ASSERTJ_VERSION")
 }

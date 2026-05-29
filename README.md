@@ -1,13 +1,24 @@
 # Gradle Convention Plugins
-This repo contains a collection of Gradle convention plugins, which provide some sensible default settings for building Java/Kotlin/Spring microservices.
 
-### Convention Plugins
-*Note: The order in which plugins are applied is important. Make sure to apply the `core` plugins first.*
+Opinionated Gradle convention plugins for consistent, low-maintenance JVM builds.
 
-| Plugin                   | Purpose                                                                          |
-|--------------------------|----------------------------------------------------------------------------------|
-| Java Spring Core         | Contains the basic setup for Java projects inlc. JUnit & Spring Boot 3           |
-| Kotlin Core              | Contains the basic setup for Kotlin projects
-| Jacoco                   | Contains the configuration for JaCoCo                                            |
-| Open Rewrite             | Contains the basic setup to run OpenRewrite migrations                           |
-| Spring Service           | Contains the basic setup for Spring Boot services                                |
+Stop copy-pasting `build.gradle.kts` boilerplate across modules. Apply one plugin ID, get a standardized build.
+
+## The Problem
+
+Multi-module Gradle projects accumulate duplicated build configuration — compiler settings, test frameworks, dependency management, publishing config — scattered across dozens of `build.gradle.kts` files. Changes require touching every module. Consistency is a myth.
+
+## The Solution
+
+Convention plugins encode your build standards once. Every module that applies a plugin inherits the same compiler flags, test setup, dependency constraints, and publishing configuration — with zero copy-paste.
+
+
+## Available Plugins
+
+| Plugin ID                     | Purpose                                                                                           |
+|-------------------------------|---------------------------------------------------------------------------------------------------|
+| `java-core`                   | Java library conventions — compiler settings, test frameworks, reproducible builds                |
+| `spring-boot-base`            | Spring Boot Java application conventions — extends `java-core`, adds Spring Boot BOM              |
+| `kotlin-core`                 | Kotlin library conventions — extends `java-core`, Kotlin compiler settings, stdlib                |
+| `jacoco`                      | JaCoCo code coverage configuration                                                                |
+| `open-rewrite`                | OpenRewrite automated refactoring setup                                                           |
