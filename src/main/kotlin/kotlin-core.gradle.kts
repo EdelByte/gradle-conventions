@@ -1,4 +1,4 @@
-import dev.edelbyte.gradle.*
+import sh.edelbyte.gradle.*
 import org.gradle.kotlin.dsl.dependencies
 
 plugins {
@@ -7,6 +7,8 @@ plugins {
 }
 
 dependencies {
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
+    
     api("org.jetbrains.kotlin:kotlin-stdlib")
     api("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$KOTLINX_COROUTINES_VERSION")

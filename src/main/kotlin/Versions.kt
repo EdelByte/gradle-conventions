@@ -1,4 +1,4 @@
-package dev.edelbyte.gradle
+package sh.edelbyte.gradle
 
 /*
  Because pre-compiled convention plugin behave quite strange when it comes to managing versions,

@@ -1,4 +1,4 @@
-import dev.edelbyte.gradle.*
+import sh.edelbyte.gradle.*
 import org.gradle.kotlin.dsl.dependencies
 
 description = "Convention Plugin for Java core configuration"
@@ -40,6 +40,7 @@ dependencies {
     implementation("org.apache.commons:commons-lang3:$COMMONS_LANG3_VERSION")
     compileOnly("org.slf4j:slf4j-api:$SLF4J_VERSION")
     
-    testImplementation("org.junit.jupiter:junit-jupiter:$JUNIT_VERSION")
+    testImplementation(platform("org.junit:junit-bom:$JUNIT_VERSION"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("org.assertj:assertj-core:$ASSERTJ_VERSION")
 }
