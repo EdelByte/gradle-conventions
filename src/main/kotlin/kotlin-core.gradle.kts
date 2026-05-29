@@ -1,4 +1,4 @@
-import io.edelbyte.gradle.*
+import dev.edelbyte.gradle.*
 import org.gradle.kotlin.dsl.dependencies
 
 plugins {

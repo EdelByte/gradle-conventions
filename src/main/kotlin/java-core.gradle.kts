@@ -1,4 +1,4 @@
-import io.edelbyte.gradle.*
+import dev.edelbyte.gradle.*
 import org.gradle.kotlin.dsl.dependencies
 
 description = "Convention Plugin for Java core configuration"
