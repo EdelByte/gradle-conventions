@@ -1,9 +1,7 @@
 import sh.edelbyte.gradle.SPRING_BOOT_VERSION
 import org.gradle.kotlin.dsl.dependencies
 
-plugins {
-    id("sh.edelbyte.gradle.java-core")
-}
+pluginManager.apply("sh.edelbyte.gradle.java-core")
 
 dependencies {
     implementation(platform("org.springframework.boot:spring-boot-dependencies:$SPRING_BOOT_VERSION"))

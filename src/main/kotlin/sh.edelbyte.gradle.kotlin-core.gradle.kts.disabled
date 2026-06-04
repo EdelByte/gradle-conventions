@@ -2,9 +2,10 @@ import sh.edelbyte.gradle.*
 import org.gradle.kotlin.dsl.dependencies
 
 plugins {
-    id("sh.edelbyte.gradle.java-core")
     id("org.jetbrains.kotlin.jvm")
 }
+
+pluginManager.apply("sh.edelbyte.gradle.java-core")
 
 dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
