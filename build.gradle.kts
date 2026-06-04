@@ -41,7 +41,7 @@ gradlePlugin {
         }
         create("openRewrite") {
             id = "sh.edelbyte.gradle.open-rewrite"
-            implementationClass = "sh.edelbyte.gradle.OpenRewriteConventionPlugin"
+            implementationClass = "sh.edelbyte.gradle.OpenRewritePlugin"
             displayName = "OpenRewrite Convention"
             description = "OpenRewrite automated refactoring and migration setup."
             tags.set(listOf("openrewrite", "refactoring", "migration"))

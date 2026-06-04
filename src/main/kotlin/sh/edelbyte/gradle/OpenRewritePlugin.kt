@@ -6,7 +6,7 @@ import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
 import org.openrewrite.gradle.RewriteExtension
 
-class OpenRewriteConventionPlugin : Plugin<Project> {
+class OpenRewritePlugin : Plugin<Project> {
     override fun apply(project: Project) {
         project.pluginManager.apply("org.openrewrite.rewrite")
 
