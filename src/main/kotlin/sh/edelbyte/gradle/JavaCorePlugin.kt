@@ -45,6 +45,7 @@ class JavaCorePlugin : Plugin<Project> {
 
             add("testImplementation", platform("org.junit:junit-bom:$JUNIT_VERSION"))
             add("testImplementation", "org.junit.jupiter:junit-jupiter")
+            add("testRuntimeOnly", "org.junit.platform:junit-platform-launcher")
             add("testImplementation", "org.assertj:assertj-core:$ASSERTJ_VERSION")
         }
     }

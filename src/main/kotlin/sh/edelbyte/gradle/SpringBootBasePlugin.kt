@@ -23,9 +23,10 @@ class SpringBootBasePlugin : Plugin<Project> {
         }
 
         project.dependencies {
-            add("implementation", platform("org.springframework.boot:spring-boot-dependencies:$SPRING_BOOT_VERSION"))
+            add("api", platform("org.springframework.boot:spring-boot-dependencies:$SPRING_BOOT_VERSION"))
             add("implementation", "org.springframework.boot:spring-boot-starter-validation")
-            add("annotationProcessor", "org.springframework.boot:spring-boot-configuration-processor")
+            add("annotationProcessor", "org.springframework.boot:spring-boot-configuration-processor:$SPRING_BOOT_VERSION")
+
             add("testImplementation", "org.springframework.boot:spring-boot-starter-test")
         }
     }
