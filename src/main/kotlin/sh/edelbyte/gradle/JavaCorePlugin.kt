@@ -24,8 +24,6 @@ class JavaCorePlugin : Plugin<Project> {
 
         project.tasks.withType<JavaCompile>().configureEach {
             options.encoding = "UTF-8"
-            // enables method parameter name introspection needed for Jackson
-            options.compilerArgs.add("-parameters")
         }
 
         project.tasks.named<Test>("test") {
@@ -33,9 +31,6 @@ class JavaCorePlugin : Plugin<Project> {
 
             maxParallelForks = Runtime.getRuntime().availableProcessors()
             systemProperty("file.encoding", "UTF-8")
-
-            // As Mockito appends the bootstrap classpath, we turn off CDS to omit the warning
-            jvmArgs("-Xshare:off")
         }
 
         // jars should be built reproducibly to improve docker layering
