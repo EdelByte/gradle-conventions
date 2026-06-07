@@ -6,9 +6,12 @@ import org.gradle.kotlin.dsl.dependencies
 
 class SpringBootServicePlugin : Plugin<Project> {
     override fun apply(project: Project) {
-        project.description = "Convention Plugin for Spring Boot micro services"
 
         project.pluginManager.apply("sh.edelbyte.gradle.spring-boot-base")
+        /*  NOTE: 
+            The Spring Boot Plugin is not applied here by design,
+            the service is meant to be built as a docker container via Jib
+        */
 
         project.dependencies {
             add("implementation", "org.springframework.boot:spring-boot-starter-actuator")
