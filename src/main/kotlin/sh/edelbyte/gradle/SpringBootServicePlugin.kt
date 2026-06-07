@@ -16,8 +16,10 @@ class SpringBootServicePlugin : Plugin<Project> {
         project.dependencies {
             add("implementation", "org.springframework.boot:spring-boot-starter-actuator")
             add("implementation", "org.springframework.boot:spring-boot-starter-aop")
+            add("implementation", "org.springframework.boot:spring-boot-starter-security")
             add("implementation", "org.springframework.boot:spring-boot-starter-web")
             add("implementation", "org.springframework.retry:spring-retry")
+            add("testImplementation", "org.springframework.security:spring-security-test")
         }
     }
 }

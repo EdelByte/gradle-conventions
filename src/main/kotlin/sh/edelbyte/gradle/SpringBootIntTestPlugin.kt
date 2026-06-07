@@ -30,10 +30,18 @@ class SpringBootIntTestPlugin : Plugin<Project> {
         project.configurations.named(intTestSourceSet.implementationConfigurationName).configure {
             extendsFrom(project.configurations.named("testImplementation").get())
         }
+        project.configurations.named(intTestSourceSet.runtimeOnlyConfigurationName).configure {
+            extendsFrom(project.configurations.named("testRuntimeOnly").get())
+        }
+        project.configurations.named(intTestSourceSet.compileOnlyConfigurationName).configure {
+            extendsFrom(project.configurations.named("testCompileOnly").get())
+        }
+        project.configurations.named(intTestSourceSet.annotationProcessorConfigurationName).configure {
+            extendsFrom(project.configurations.named("testAnnotationProcessor").get())
+        }
 
         project.dependencies {
-            add(intTestSourceSet.implementationConfigurationName, platform("org.springframework.cloud:spring-cloud-dependencies:2023.0.5"))
-            add(intTestSourceSet.implementationConfigurationName, "org.springframework.cloud:spring-cloud-contract-wiremock")
+            add(intTestSourceSet.implementationConfigurationName, "org.awaitility:awaitility")
         }
 
         val intTest = project.tasks.register<Test>("intTest") {

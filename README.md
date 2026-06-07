@@ -19,6 +19,8 @@ This repo contains a set of __opinionated__ convention plugins to help set sensi
 |-------------------------------|---------------------------------------------------------------------------------------------------|
 | `java-core`                   | Java library conventions — compiler settings, test frameworks, reproducible builds                |
 | `spring-boot-base`            | Spring Boot Java application conventions — extends `java-core`, adds Spring Boot BOM              |
+| `spring-boot-service`         | Spring Boot service conventions — extends `spring-boot-base`, adds actuator, web, AOP, retry      |
+| `spring-boot-int-test`        | Spring Boot integration-test conventions — adds `intTest` source set/task and test wiring         |
 | `kotlin-core`                 | Kotlin library conventions — extends `java-core`, Kotlin compiler settings, stdlib                |
 | `jacoco`                      | JaCoCo code coverage configuration                                                                |
 | `open-rewrite`                | OpenRewrite automated refactoring setup                                                           |
