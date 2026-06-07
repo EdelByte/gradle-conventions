@@ -46,6 +46,13 @@ gradlePlugin {
             description = "Convention Plugin for Spring Boot micro services"
             tags.set(listOf("spring-boot", "conventions", "service"))
         }
+        create("springBootIntTest") {
+            id = "sh.edelbyte.gradle.spring-boot-int-test"
+            implementationClass = "sh.edelbyte.gradle.SpringBootIntTestPlugin"
+            displayName = "Spring Boot Integration Test Convention"
+            description = "Convention Plugin for running integration tests on Spring Boot services"
+            tags.set(listOf("spring-boot", "conventions", "integration-test"))
+        }
         create("openRewrite") {
             id = "sh.edelbyte.gradle.open-rewrite"
             implementationClass = "sh.edelbyte.gradle.OpenRewritePlugin"
