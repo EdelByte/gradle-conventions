@@ -11,7 +11,7 @@ Multi-module Gradle projects accumulate duplicated build configuration — compi
 ## The Solution
 
 Convention plugins encode your build standards once. Every module that applies a plugin inherits the same compiler flags, test setup, dependency constraints, and publishing configuration — with zero copy-paste.
-
+This repo contains a set of __opinionated__ convention plugins to help set sensible defaults for projects.
 
 ## Available Plugins
 

@@ -39,6 +39,13 @@ gradlePlugin {
             description = "Spring Boot application conventions with validation and configuration processor."
             tags.set(listOf("spring-boot", "conventions", "validation"))
         }
+        create("springBootService") {
+            id = "sh.edelbyte.gradle.spring-boot-service"
+            implementationClass = "sh.edelbyte.gradle.SpringBootServicePlugin"
+            displayName = "Spring Boot Service Convention"
+            description = "Convention Plugin for Spring Boot micro services"
+            tags.set(listOf("spring-boot", "conventions", "service"))
+        }
         create("openRewrite") {
             id = "sh.edelbyte.gradle.open-rewrite"
             implementationClass = "sh.edelbyte.gradle.OpenRewritePlugin"
