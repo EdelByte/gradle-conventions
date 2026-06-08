@@ -13,6 +13,11 @@ Multi-module Gradle projects accumulate duplicated build configuration — compi
 Convention plugins encode your build standards once. Every module that applies a plugin inherits the same compiler flags, test setup, dependency constraints, and publishing configuration — with zero copy-paste.
 This repo contains a set of __opinionated__ convention plugins to help set sensible defaults for projects.
 
+
+## Demo Repository
+
+To see these convention plugins in action, including how they are applied in real module `build.gradle.kts` files, see the demo repository: [Demo project](https://github.com/<your-org>/<your-demo-repo>).
+
 ## Available Plugins
 
 | Plugin ID                     | Purpose                                                                                           |
@@ -24,3 +29,8 @@ This repo contains a set of __opinionated__ convention plugins to help set sensi
 | `kotlin-core`                 | Kotlin library conventions — extends `java-core`, Kotlin compiler settings, stdlib                |
 | `jacoco`                      | JaCoCo code coverage configuration                                                                |
 | `open-rewrite`                | OpenRewrite automated refactoring setup                                                           |
+
+## Background
+
+These conventions were built as the result of migrating a ~1M LOC project with 25 microservices and 35 libraries from Maven to Gradle, and they reflect the defaults and patterns that proved most effective during that migration.
+
