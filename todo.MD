@@ -1,0 +1,18 @@
+# Repository findings
+Assessment date: 2026-11-17. Reviewed local `main` at `336f540` (`v0.3.0`).
+Items below distinguish confirmed gaps from potential issues that need validation.
+
+1. [ ] **Add automated plugin tests.** No test sources exist in the checkout. Add Gradle TestKit consumer projects covering all seven plugins, dependency resolution, Java/Kotlin test execution, plugin combinations, integration tests, and configuration-cache reuse.
+2. [ ] **Add CI verification.** No CI workflows exist in the checkout. Automate build, plugin validation, and functional tests; establish the supported Gradle/JDK compatibility matrix.
+3. [ ] **Validate Kotlin BOM resolution.** `KotlinCorePlugin.kt` declares `org.jetbrains.kotlin:kotlin-bom` without a version. Verify standalone consumer resolution and supply an explicit version or another reliable version source if necessary. This is a potential issue, not a reproduced failure.
+4. [ ] **Align Kotlin tests with JUnit Platform.** `KotlinCorePlugin.kt` adds the JUnit 4 adapter `kotlin-test-junit`, while `JavaCorePlugin.kt` uses JUnit Platform. Verify Kotlin tests are discovered; prefer `kotlin-test-junit5` for the existing Jupiter setup unless JUnit 4 support is intentional.
+5. [ ] **Replace the placeholder demo link.** `README.md` still links to `<your-org>/<your-demo-repo>`. Point it to a real consumer example or remove the placeholder.
+6. [ ] **Document plugin installation and compatibility.** Add copy-paste examples using full `sh.edelbyte.gradle.*` IDs and a released version, supported Gradle/JDK versions, and guidance on combining plugins.
+7. [ ] **Document integration-test conventions.** Explain the `intTest` source set/task, configured `src/it/java` and `src/it/resources` directories, inherited test dependencies, and execution through `check`.
+8. [ ] **Clarify Spring Boot packaging behavior.** Document that the service convention deliberately does not apply the Spring Boot plugin or provide `bootJar`.
+9. [ ] **Decide ownership of container packaging.** `SpringBootServicePlugin.kt` references Jib, but no convention configures it. Either implement a packaging convention or explicitly leave packaging to consumers; remove or use the unused `DOCKER_JRE_BASE_IMAGE` constant accordingly.
+10. [ ] **Remove conflicting project version declarations.** `build.gradle.kts` sets `0.3.0`, while `gradle.properties` still declares `0.1.0-SNAPSHOT`. Establish one authoritative project version.
+11. [ ] **Consolidate dependency version management.** Versions are spread across `Versions.kt` and plugin implementations. The apparently unused `gradle/libs.versions.toml` also declares a different JUnit version. Consolidate the sources or clearly separate their responsibilities.
+12. [ ] **Refresh the version-management explanation.** The comment in `Versions.kt` describes precompiled-plugin limitations even though the plugins are now class-based. Update it to describe the current approach and rationale.
+13. [ ] **Verify the build and release artifacts.** The assessment did not run the build or verify published plugin artifacts. Compile and validate the plugins, then confirm released plugin IDs and versions can be resolved by a consumer.
+14. [x] **Recheck remote repository freshness.** Verified on 2026-11-17 using a read-only HTTPS `git ls-remote --heads --tags` check. The remote advertises only `main`, at `336f5401ec55fca4cf6b0baddf1006bb69964d43`, matching local `HEAD` and cached `origin/main`. Remote release tags are `v0.1.0`, `v0.2.0`, and `v0.3.0`; `v0.3.0` resolves to the same commit. No newer remote branch tip or release tag was found. SSH authentication remains unavailable; the configured remote was not changed.
