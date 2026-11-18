@@ -21,6 +21,7 @@ class KotlinCorePlugin : Plugin<Project> {
         }
 
         project.dependencies {
+            // The Kotlin Gradle plugin supplies the BOM version (defaults to the plugin version)
             add("implementation", platform("org.jetbrains.kotlin:kotlin-bom"))
             add("api", "org.jetbrains.kotlin:kotlin-stdlib")
             add("api", "org.jetbrains.kotlin:kotlin-reflect")
