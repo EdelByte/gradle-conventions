@@ -25,7 +25,7 @@ Build verification uses a full JDK 17, not just a Java runtime. Select it using 
 
 ## Demo Repository
 
-To see these convention plugins in action, including how they are applied in real module `build.gradle.kts` files, see the demo repository: [Demo project](https://github.com/<your-org>/<your-demo-repo>).
+To see these convention plugins in action, including how they are applied in real module `build.gradle.kts` files, see the demo repository: [Demo project](https://github.com/EdelByte/gradle-conventions-demo).
 
 ## Available Plugins
 
