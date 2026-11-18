@@ -14,6 +14,15 @@ Convention plugins encode your build standards once. Every module that applies a
 This repo contains a set of __opinionated__ convention plugins to help set sensible defaults for projects.
 
 
+## Building This Repository
+
+Build verification uses a full JDK 17, not just a Java runtime. Select it using your preferred JDK manager, `JAVA_HOME`, or IDE settings. The Gradle 8.14.4 wrapper does not support running on Java 25.
+
+```bash
+./gradlew clean build --no-daemon
+```
+
+
 ## Demo Repository
 
 To see these convention plugins in action, including how they are applied in real module `build.gradle.kts` files, see the demo repository: [Demo project](https://github.com/<your-org>/<your-demo-repo>).

@@ -25,7 +25,7 @@ class KotlinCorePlugin : Plugin<Project> {
             add("api", "org.jetbrains.kotlin:kotlin-stdlib")
             add("api", "org.jetbrains.kotlin:kotlin-reflect")
             add("implementation", "org.jetbrains.kotlinx:kotlinx-coroutines-core:$KOTLINX_COROUTINES_VERSION")
-            add("testImplementation", "org.jetbrains.kotlin:kotlin-test-junit")
+            add("testImplementation", "org.jetbrains.kotlin:kotlin-test-junit5")
             add("testImplementation", "org.jetbrains.kotlinx:kotlinx-coroutines-test:$KOTLINX_COROUTINES_VERSION")
         }
     }
