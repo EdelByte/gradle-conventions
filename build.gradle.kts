@@ -1,10 +1,19 @@
 plugins {
     `kotlin-dsl`
     id("com.gradle.plugin-publish") version "2.1.1"
+    id("net.researchgate.release") version "3.2.0"
 }
 
 group = "sh.edelbyte.gradle"
-version = "0.3.0"
+
+release {
+    tagTemplate.set("v\$version")
+    buildTasks.set(listOf("clean", "build"))
+    git {
+        requireBranch.set("main")
+        commitVersionFileOnly.set(true)
+    }
+}
 
 gradlePlugin {
     website.set("https://github.com/EdelByte/gradle-conventions")
